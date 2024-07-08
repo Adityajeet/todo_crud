@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Information</title>
+</head>
+<body>
+    <h1>Todo List:</h1>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Task</th>
+        </thead>
+        {% for task in tasks %}
+        <tr>
+            <td>{{task.id}}</td>
+            <td>{{task.Name}}</td>
+            <td>{{task.Task}}</td>
+            <td><a href="/delete/{{task.id}}">Delete</a></td>
+            <td><a href="/update/{{task.id}}">Update</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    <br><br>
+    <a href="/create">Add Tasks</a>
+    <a href="/accounts/logout">Log out</a>
+</body>
+</html>
